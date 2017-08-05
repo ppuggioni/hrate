@@ -2,7 +2,11 @@
 Installation
 ------------
 
-To read data files you need to install [wfdb](https://www.physionet.org/physiotools/wfdb-darwin-quick-start.shtml)
+BLA BLA
+
+**Other tools**
+
+To read some of the files you might need to install [wfdb](https://www.physionet.org/physiotools/wfdb-darwin-quick-start.shtml)
 
 Dataset
 -------
