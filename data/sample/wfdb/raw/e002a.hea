@@ -1,0 +1,8 @@
+e002a 0 125.44 0 9:45:00 28/06/1987
+# Start time=09:45
+# First beat=09:50:28.140
+# <age-range>: 65-69, <sex>: Male, <medication>: None
+# <RR-low-limit(sec)>: 0.445,  <RR-high-limit(sec)>: 0.992
+# Note: reel-to-reel recording, not flutter-compensated;
+#       time rescaled to fit the recording speed (1.47mm/s) from the scanning
+#       speed (1.50mm/s) (i.e., sampling-rate adjusted to 125.44Hz from 128Hz)
