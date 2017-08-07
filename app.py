@@ -16,7 +16,7 @@ logging.basicConfig(format=FORMAT, level=logging.INFO)
 app = dash.Dash()
 
 # LOADING data
-DATADIR = 'data/sample/selfloops'
+DATADIR = 'data/selfloops'
 file_paths = [join(DATADIR, f) for f in listdir(DATADIR) if isfile(join(DATADIR, f)) if f.endswith('.txt')]
 
 data = OrderedDict()
