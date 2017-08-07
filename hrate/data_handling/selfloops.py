@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import logging
 
 def read_selfloops_file(path, skiprows=30, skipfooter=30):
     """
@@ -11,6 +11,7 @@ def read_selfloops_file(path, skiprows=30, skipfooter=30):
     :return:
     """
     with open(path, 'r') as f:
+        logging.info('Opening file {}'.format(path))
         first_line = f.readline().strip('\n')
 
     start_time = pd.to_datetime(first_line, format='%d %B %Y %H:%M:%S')
