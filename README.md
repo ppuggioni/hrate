@@ -27,7 +27,7 @@ Folder structure:
 
 Running the app
 ---------------
-1. To analyse new selfloops files, simply add them to data/selfloops and make sure they have txt extension.
+1. To analyse new selfloops files, simply add them to `data/selfloops` and make sure they have txt extension.
 2. `python app.py` 
 
 
