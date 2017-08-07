@@ -29,6 +29,7 @@ Running the app
 ---------------
 1. To analyse new selfloops files, simply add them to `data/selfloops` and make sure they have txt extension.
 2. `python app.py` 
+3. Open Chrome at `http://127.0.0.1:8050/`
 
 
 
