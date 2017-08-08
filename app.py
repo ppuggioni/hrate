@@ -59,6 +59,13 @@ app.layout = html.Div([
             html.H4('Summary RR events', style={'width': '35%', 'padding': '0'}),
             html.Div([html.Pre(id='RR_summary')], style={'width': '35%', 'padding': '0'}),
         ]
+    ),
+
+    html.Div(
+        [
+            html.H4('Summary HR events', style={'width': '35%', 'padding': '0'}),
+            html.Div([html.Pre(id='HR_summary_stats')], style={'width': '35%', 'padding': '0'}),
+        ]
     )
 
 ])
@@ -335,6 +342,25 @@ def create_RR_summary(file_name, x_selected_hr):
 
     return out
 
+
+@app.callback(
+    dash.dependencies.Output('HR_summary_stats', 'children'),
+    [dash.dependencies.Input('file_name', 'value'),
+     dash.dependencies.Input('HR_plot', 'selectedData'),
+     ])
+def create_HR_summary(file_name, x_selected_hr):
+    # TODO: create a list of the slowest and fastest. Make it click and highlight the intervals on the RR plot
+    max_HR_idx = data[file_name]['HR'].idxmax()
+    min_HR_idx = data[file_name]['HR'].idxmin()
+
+    out = "Min. HR = {}/min at {} \n" \
+          "Max. HR = {}/min at {} \n".format(data[file_name].loc[min_HR_idx,'HR'],
+                                                  data[file_name].loc[min_HR_idx, 'Time_stamp'],
+                                                  data[file_name].loc[max_HR_idx, 'HR'],
+                                                  data[file_name].loc[max_HR_idx, 'Time_stamp'],
+                                                  )
+
+    return out
 
 def resample_df(df):
     if len(df.index) < 1000:
