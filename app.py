@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 from os.path import isfile, join
 from os import listdir
+import os
 from collections import OrderedDict
 from hrate.data_handling.selfloops import read_selfloops_file
 import logging
@@ -13,7 +14,10 @@ import logging
 FORMAT = '%(asctime)-15s  %(message)s'
 logging.basicConfig(format=FORMAT, level=logging.INFO)
 
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server
+server.secret_key = os.environ.get('SECRET_KEY', 'my-secret-key')
+
 
 # LOADING data
 DATADIR = 'data/selfloops'
@@ -372,5 +376,4 @@ def resample_df(df):
 
 
 if __name__ == '__main__':
-    app.config.supress_callback_exceptions = True
     app.run_server()
