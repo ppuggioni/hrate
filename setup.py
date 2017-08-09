@@ -2,8 +2,8 @@
 
 from setuptools import setup
 
-with open('requirements.txt') as f:
-    install_reqs = f.read().splitlines()
+#with open('requirements.txt') as f:
+#    install_reqs = f.read().splitlines()
 
 
 
@@ -15,5 +15,5 @@ setup(name='hrate',
       author_email='p.paolo321@gmail.com',
       license='MIT',
       packages=['hrate'],
-      install_requires=install_reqs,
+ #     install_requires=install_reqs,
       zip_safe=False)
